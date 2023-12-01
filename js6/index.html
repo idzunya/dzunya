@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Human(name, age){
+            this.name = name;
+            this.age = age;
+        }
+
+        const human1 = new Human("Вася", 40);
+        const human2 = new Human("Коля", 28);
+        const human3 = new Human("Петя", 34);
+
+        let w_people = [human1, human2, human3];
+
+        function sortByAgeAscending(arr) {
+            arr.sort(function(a, b) {
+                return a.age - b.age;
+            });
+        }
+
+        function sortByAgeDescending(arr) {
+            arr.sort(function(a, b) {
+                return b.age - a.age;
+            });
+        }
+
+        sortByAgeAscending(w_people);
+        document.write("<b>Сортировка по возрастанию:</b><br>");
+        for (let i = 0; i < w_people.length; i++) {
+            document.write(`Name: ${w_people[i].name} | Age: ${w_people[i].age}<br>`);
+        }
+
+        document.write("<br>");
+
+        sortByAgeDescending(w_people);
+        document.write("<b>Сортировка по убыванию:</b><br>");
+        for (let i = 0; i < w_people.length; i++) {
+            document.write(`Name: ${w_people[i].name} | Age: ${w_people[i].age}<br>`);
+        }
+
+        console.log(w_people);
+        let dates = new Date ();
+        document.write(`Worker company | ${dates} |`);
+    </script>
+</body>
+</html>
