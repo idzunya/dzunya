@@ -1,0 +1,296 @@
+*{
+    box-sizing: border-box;
+}
+body, html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.page{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/Rectangle\ 1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    line-height: normal;
+    min-height: 100vh;
+    padding: 70px 60px;
+}
+.header1{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.left{
+    display: flex;
+    width: 50%;
+    align-items: center;
+}
+.netflix{
+    margin-right: 16px;
+}
+.text1{
+    color: #C8C8C8;
+    font-size: 24px;
+    padding-left: 20px;
+    font-family: "Kyiv Type Titling", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.right{
+    display: flex;
+    width: 15%;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 48px;
+}
+.search{
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+}
+.content1{
+    margin-top: 115px;
+}
+.text2{
+    display: flex;
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    word-spacing: 15px;
+}
+.film{
+    font-family: 'Inter', sans-serif;
+    color: #FFF;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 3.52px;
+    margin: -50px 0px;
+}
+.info1{
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    gap: 1vw;
+    font-size: 28px;
+    min-width: 100%;
+    color: #FFF;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 90px 0px;
+}
+.info2{
+    color: #A7A6A6;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15px;  
+    margin: -65px 0px;
+}
+.color{
+    color: #A7A6A6;
+    font-family: Inter;
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.stars{
+    display: flex;
+    gap: 14px;
+    margin: 100px 0px;
+}
+.buttons{
+    display: flex
+}
+.watch{
+    position: absolute;
+    width: 272px;
+    height: 64px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #D40D1F;
+    border: none;
+    color: #FFF;
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    text-align: center;
+    top: 760px;
+}
+.episodes{
+    position: absolute;
+    width: 271px;
+    height: 64px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 3px solid #FFF;
+    background-color: transparent;
+    color: #FFF;
+    font-family: 'Inter', sans-serif; 
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 141.523%; /* 31.135px */
+    margin-left: 340px;
+    top: 760px;
+}
+.texth{
+    width: 342px;
+    height: 26px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: 'Inter', sans-serif; 
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 144.523%; /* 31.795px */
+    letter-spacing: 2.97px;
+}
+.popularmovie{
+    display: flex;
+    position: relative;
+    margin-top: 50px;
+}
+.left1{
+    border: 2px solid #A7A6A6;
+    background-color: transparent;
+    border-radius: 200px;   
+}
+.right1{
+    border: 2px solid #FFF;
+    background-color: transparent;
+    border-radius: 200px; 
+}
+.nextbt{
+    display: flex;
+    position: absolute;
+    left: 785px;
+}
+.nextbt button{
+    margin-right: 25px;
+}
+.movies{
+    position: absolute;
+    display: flex;
+    margin-top: 70px;
+}
+.movies img{
+    margin-right: 40px;
+}
+.age{
+    background: rgba(255, 255, 255, 0.49);
+    position: fixed;
+    bottom: 100px;
+    right: 0px;
+    width: 10%;
+    padding: 15px 15px;
+    border-left: 20px solid #D40D1F;
+}
+@media screen and (max-width: 960px){
+    .left{ 
+        width: 60%;
+    }
+    .popularmovie{
+        max-width: 80%;
+    }
+    .text1{
+        padding-left: 15px
+    }
+    .netflix{
+        margin-right: 15px;
+    }
+    .text2, .info1{
+        padding: 0px 10px;
+    }
+    .text2, .info2, .info1,
+    .text1, .search, .stars{
+        font-size: 3vw;
+    }
+    .film{
+        font-size: 7vw;
+    }
+    .watch, .popularmovie{
+        font-size: 2.5vw;
+    }
+}
+@media screen and (max-width: 768px) {
+    .page {
+        padding: 20px 10px;
+    }
+
+    .header1 {
+        padding: 0 10px; 
+    }
+
+    .text1 {
+        font-size: 18px;
+    }
+
+    .right {
+        width: 35%; 
+        gap: 20px; 
+    }
+
+    .search {
+        font-size: 24px;
+    }
+
+    .content1 {
+        margin-top: 80px; 
+    }
+
+    .text2 {
+        font-size: 24px;
+        word-spacing: 8px; 
+    }
+
+    .film {
+        font-size: 48px; 
+        margin: -30px 0; 
+    }
+
+    .info1 {
+        font-size: 22px; 
+        margin: 70px 0; 
+    }
+
+    .info2 {
+        font-size: 18px; 
+        margin: -45px 0; 
+    }
+
+    .stars {
+        margin: 80px 0; 
+    }
+    
+    .buttons button {
+        padding: 10px 20px;
+        font-size: 18px; 
+    }
+
+    .popularmovie {
+        margin-top: 50px; 
+    }
+
+    .movies img {
+        width: calc(20% - 10px); 
+        margin-right: 10px; 
+    }
+
+    .age {
+        font-size: 18px; 
+    }
+}
