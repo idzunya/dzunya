@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>Виселица!</title>
+</head>
+<body>
+ <h1>Виселица!</h1>
+ <script>
+ var words = [
+ "программа",
+ "жизнь",
+ "кофеин",
+ "лампа"
+ ];
+ var word = words[Math.floor(Math.random() * words.length)];
+ var answerArray = [];
+ for (var i = 0; i < word.length; i++) {
+ answerArray[i] = "_";
+ }
+ var remainingLetters = word.length;
+ while (remainingLetters > 0) {
+    alert(answerArray.join(" "));
+
+    var guess = prompt("Угадайте букву, или нажмите 'Отмена' для выхода из игры.");
+    if (guess === null) {
+        break;
+    } else if (guess.length !== 1 || !(/[а-яё]/i.test(guess))) {
+        alert("Пожалуйста, введите одиночную букву на русском языке.");
+    } else {
+        var guessLowerCase = guess.toLowerCase();
+        var wordLowerCase = word.toLowerCase();
+
+        var found = false;
+        for (var j = 0; j < word.length; j++) {
+            if (wordLowerCase[j] === guessLowerCase) {
+                if (answerArray[j] === "_") {
+                    answerArray[j] = word[j];
+                    remainingLetters--;
+                    found = true;
+                } else {
+                    alert("Вы уже угадали эту букву.");
+                    found = true;
+                    break;
+                }
+            }
+        }
+        if (!found) {
+            alert("Такой буквы в слове нет.");
+        }
+    }
+ }
+ alert("Отлично! Было загадано слово: " + word);
+ </script>
+</body>
+</html>
