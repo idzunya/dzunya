@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Виберіть валюту</h3>
+    <input type="text" id="inp" placeholder="Введіть валюту: bitcoin, ethereum, stellar">
+    <button id="btn">Вибрати</button>
+    <div id="result"></div>
+    <script>
+        var obj = {'Коля': '1000', 'Вася': '500', 'Петя': '200'};
+        console.log("Зарплата Пети:", obj['Петя']);
+        console.log("Зарплата Коли:", obj['Коля']);
+
+        let cryptoWallet = {
+            nameUser : "",
+            money : {
+                bitcoin : {
+                    name : "Bitcoin",
+                    logo : "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/120px-Bitcoin.svg.png",
+                    balance : 5,
+                    course : 2849539.38,
+                },
+                ethereum : {
+                    name : "Ethereum",
+                    logo : "https://ru.bitcoinwiki.org/upload/ru/images/7/7a/Ethereum_%28ETH%29.png",
+                    balance : 1,
+                    course : 301396.58,
+                },
+                stellar : {
+                    name : "Stellar",
+                    logo : "https://s2.coinmarketcap.com/static/img/coins/200x200/512.png",
+                    balance : 45,
+                    course : 4.40,
+                }
+            }
+        };
+
+        cryptoWallet.nameUser = prompt('Введіть ваше ім\'я');
+
+        const checkMoney = function() {
+            let valute = document.getElementById("inp").value.toLowerCase();
+            let resultContainer = document.getElementById("result");
+
+            if (cryptoWallet.money[valute]) {
+                let { name, logo, balance, course } = cryptoWallet.money[valute];
+                let totalInUAH = parseInt(balance * course);
+
+                resultContainer.innerHTML = `
+                    <p>Доброго дня, ${cryptoWallet.nameUser}!</p>
+                    <p>На вашому балансі ${name} <img style="width: 100px;height: 100px;" src="${logo}"></p>
+                    <p>Залишилося ${balance} монет, якщо ви сьогодні продасте їх, то отримаєте ${totalInUAH} грн</p>
+                `;
+            } else {
+                resultContainer.textContent = "Некоректно введена назва";
+            }
+        }
+
+        let show = document.getElementById("btn");
+        show.onclick = function() {
+            checkMoney();
+        }
+
+        function isEmpty(obj){
+            return Object.keys(obj).length === 0;
+        }
+    </script>
+</body>
+</html>
