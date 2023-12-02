@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Перевірка телефонного номеру</title>
+  <style>
+    .error {
+      color: red;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<input type="text" id="phoneInput" placeholder="Введіть номер телефону у форматі 000-000-00-00">
+<button id="saveBtn">Зберегти</button>
+<div id="errorDisplay" class="error"></div>
+
+<script>
+  const phoneInput = document.getElementById('phoneInput');
+  const saveBtn = document.getElementById('saveBtn');
+  const errorDisplay = document.getElementById('errorDisplay');
+
+  saveBtn.addEventListener('click', function() {
+    const phoneRegex = /^\d{3}-\d{3}-\d{2}-\d{2}$/;
+
+    if (phoneRegex.test(phoneInput.value)) {
+      errorDisplay.textContent = '';
+      phoneInput.style.backgroundColor = 'green';
+      window.location.href = 'https://risovach.ru/upload/2013/03/mem/toni-stark_13447470_big_.jpeg';
+    } else {
+      errorDisplay.textContent = 'Будь ласка, введіть номер у форматі 000-000-00-00';
+      phoneInput.style.backgroundColor = '';
+    }
+  });
+</script>
