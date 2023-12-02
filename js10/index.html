@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banners</title>
+  <style>
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 20px auto;
+    }
+    .buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="banner">
+  <img src="banners/1.jpg" alt="Banner 1">
+</div>
+
+<div class="buttons">
+  <button id="stopButton">Припинити</button>
+  <button id="resumeButton">Відновити показ</button>
+</div>
+
+<script>
+  const banners = [
+    'banners/1.jpg',
+    'banners/2.jpg',
+    'banners/3.jpg',
+    'banners/4.png'
+  ];
+
+  let currentBanner = 0;
+  let intervalId = null;
+
+  const bannerElement = document.getElementById('banner');
+  const stopButton = document.getElementById('stopButton');
+  const resumeButton = document.getElementById('resumeButton');
+
+  function showNextBanner() {
+    bannerElement.innerHTML = `<img src="${banners[currentBanner]}" alt="Banner ${currentBanner + 1}">`;
+    currentBanner = (currentBanner + 1) % banners.length;
+  }
+
+  function startBannerRotation() {
+    intervalId = setInterval(showNextBanner, 10000);
+  }
+
+  function stopBannerRotation() {
+    clearInterval(intervalId);
+  }
+
+  stopButton.addEventListener('click', stopBannerRotation);
+  resumeButton.addEventListener('click', () => {
+    showNextBanner();
+    startBannerRotation();
+  });
+
+  startBannerRotation();
+</script>
+
+</body>
+</html>
